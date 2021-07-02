@@ -60,7 +60,7 @@ select * from dept
 select * from emp
 
 
-alter proc JobWiseDetails(@job varchar(30), @count int, @mxSal decimal, @mnSal decimal) AS
+alter proc JobWiseDetails(@job varchar(30), @count int out, @mxSal decimal out, @mnSal decimal out) AS
 select @count = count(empno), @mxSal=max(sal), @mnSal=min(sal) from EMP where job=@job
 select @count, @mxSal, @mnSal
 
